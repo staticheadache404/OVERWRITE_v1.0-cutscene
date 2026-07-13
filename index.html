@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>PROXY_NODE://04 — TRANSMISSION</title>
+<title>OVERWRITE_v1.0 — TRANSMISSION</title>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap");
 
@@ -148,7 +148,7 @@
 <div id="crt">
   <div class="terminal">
     <div class="titlebar">
-      <span><span class="dot"></span>PROXY_NODE://04</span>
+      <span><span class="dot"></span>OVERWRITE_v1.0</span>
       <span style="display:flex;align-items:center;gap:12px;">
         <button id="muteBtn" class="mute-btn" aria-label="Toggle sound">🔊</button>
         <span class="live"><span class="dot"></span>LIVE</span>
@@ -327,7 +327,7 @@
       blipEl.currentTime = 0;
       blipEl.play().catch(() => {});
       clearTimeout(blipCutTimer);
-      blipCutTimer = setTimeout(() => blipEl.pause(), 70);
+      blipCutTimer = setTimeout(() => blipEl.pause(), 45);
     }catch(e){ /* ignore */ }
   }
 
@@ -431,7 +431,7 @@
     if(beat.type === "system"){
       systemLineEl.classList.remove("hidden");
       systemLineEl.classList.toggle("warn", !!beat.warn);
-      typeText(systemLineEl, beat.text, 22, () => { currentBeatDone = true; });
+      typeText(systemLineEl, beat.text, 8, () => { currentBeatDone = true; });
       return;
     }
 
@@ -442,7 +442,7 @@
       speakerTagEl.classList.toggle("warn", !!beat.glitch);
       spriteWrapEl.classList.toggle("glitching", !!beat.glitch);
       startTalking(CHASE);
-      typeText(dialogueTextEl, beat.text, 20, () => {
+      typeText(dialogueTextEl, beat.text, 7, () => {
         stopTalking(CHASE);
         currentBeatDone = true;
       });
@@ -478,10 +478,10 @@
         div.appendChild(bodySpan);
         feedLinesEl.appendChild(div);
         feedPanelEl.scrollTop = feedPanelEl.scrollHeight;
-        typeText(bodySpan, line.text, 12, () => {
+        typeText(bodySpan, line.text, 5, () => {
           li++;
           feedPanelEl.scrollTop = feedPanelEl.scrollHeight;
-          setTimeout(nextLine, 350);
+          setTimeout(nextLine, 220);
         });
       }
       nextLine();
