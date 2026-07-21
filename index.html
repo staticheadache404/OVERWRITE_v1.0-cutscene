@@ -442,7 +442,7 @@
       speakerTagEl.classList.toggle("warn", !!beat.glitch);
       spriteWrapEl.classList.toggle("glitching", !!beat.glitch);
       startTalking(CHASE);
-      typeText(dialogueTextEl, beat.text, 7, () => {
+      typeText(dialogueTextEl, beat.text, 6, () => {
         stopTalking(CHASE);
         currentBeatDone = true;
       });
